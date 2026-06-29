@@ -9,18 +9,22 @@ Full spec: `docs/PRD.md`. Design system + screen specs: `docs/Kairo_Design_Brief
 - Supabase (auth + database + storage)
 - Env vars: `EXPO_PUBLIC_SUPABASE_URL` and `EXPO_PUBLIC_SUPABASE_ANON_KEY` in `.env` (git-ignored, never commit)
 
-## File structure
+## File structure 
 ```
-app/          ← Expo Router screens (populated Stage 1+)
-components/   ← Reusable UI components
-constants/    ← Design tokens (colors.ts, typography.ts) — values from PRD
-design/       ← Design handoff HTML mockups
-docs/         ← PRD.md + Kairo_Design_Brief.md
-hooks/        ← Custom React hooks
-lib/          ← supabase.ts client
-screens/      ← Full-screen components
-types/        ← TypeScript types (database.ts has all 5 table shapes)
-assets/       ← Images, fonts
+app/              ← Expo Router screens
+  (auth)/         ← Onboarding flow (signup, profile, intro, invite)
+  (tabs)/         ← Main tab screens (Home, Friends, Create, Profile)
+  _layout.tsx     ← Root layout — fonts, splash, AuthProvider
+  index.tsx       ← Launch screen
+contexts/         ← AuthContext (session + profile state)
+constants/        ← Design tokens (colors.ts, typography.ts)
+design/           ← Design handoff HTML mockups
+docs/             ← PRD.md + Kairo_Design_Brief.md
+lib/              ← supabase.ts client
+supabase/
+  migrations/     ← SQL migration files (run in Supabase SQL Editor)
+types/            ← TypeScript types (database.ts has all 5 table shapes)
+assets/           ← Images, fonts
 ```
 
 Use `@/` path alias for all imports (e.g. `import { colors } from '@/constants/colors'`).
@@ -30,8 +34,8 @@ Use `@/` path alias for all imports (e.g. `import { colors } from '@/constants/c
 | Stage | What | Status |
 |-------|------|--------|
 | 0 | Project skeleton — Expo + Supabase connected, blank app on phone | ✅ COMPLETE |
-| 1 | Auth + onboarding — Sign in with Apple, profile setup (name, username, photo), 3 intro cards | 🔜 NEXT |
-| 2 | Data layer — 5 Supabase tables + RLS + photo storage bucket | — |
+| 1 | Auth + onboarding — Sign in with Apple, profile setup (name, username, photo), 3 intro cards | ✅ COMPLETE |
+| 2 | Data layer — 5 Supabase tables + RLS + photo storage bucket | 🔜 NEXT |
 | 3 | Capture + Create — camera (horizontal lock), make-a-postcard flow, workbench | — |
 | 4 | Weekly cycle + Home — countdown, reveal gate, Home screen | — |
 | — | **PAUSE after Stage 4** — use solo for a few days before social layer | — |

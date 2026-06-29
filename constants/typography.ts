@@ -1,11 +1,7 @@
-// Typefaces not yet selected — placeholders until Stage 1 font load is wired.
-// Serif (Fraunces): wordmark, prompts, captions, section headlines.
-// Sans (SF Pro / Inter): UI labels, buttons, meta, counts, nav.
-
 export const fontFamily = {
-  serif: undefined as string | undefined,      // e.g. 'Fraunces_400Regular'
-  serifItalic: undefined as string | undefined, // e.g. 'Fraunces_400Regular_Italic'
-  sans: undefined as string | undefined,        // system default until loaded
+  serif: 'Fraunces_400Regular',
+  serifItalic: 'Fraunces_400Regular_Italic',
+  sans: undefined as string | undefined,
 } as const;
 
 export const fontSize = {
