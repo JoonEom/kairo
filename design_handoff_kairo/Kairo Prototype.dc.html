@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <style>html,body{margin:0;padding:0}*{box-sizing:border-box}.kairo-scroller::-webkit-scrollbar{display:none}</style>
+</helmet>
+<div style="min-height:100vh;box-sizing:border-box;padding:56px;background:#E8E4DC;font-family:'Inter',-apple-system,sans-serif;display:flex;flex-direction:column;align-items:center;gap:26px">
+
+  <x-import component="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+    <div style="height:100%;position:relative;overflow:hidden;background:#F7F3EA">
+
+      <!-- ================================================== HOME ================================================== -->
+      <div style="{{ homeStyle }}">
+        <!-- header -->
+        <div style="padding:64px 0 14px;text-align:center;flex:none">
+          <div style="font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:25px;letter-spacing:-0.01em;color:#26241F">Kairo</div>
+        </div>
+
+        <div class="kairo-scroller" style="flex:1;overflow:auto;padding:0 20px">
+
+          <!-- in progress card -->
+          <div onClick="{{ goCreate }}" style="background:#FBF8F1;border:1px solid #E4DCC9;border-radius:14px;padding:20px;box-shadow:0 6px 20px rgba(38,36,31,0.08);cursor:pointer">
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#9C9484">Kairo in progress</div>
+            <div style="font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:31px;line-height:1.06;color:#26241F;margin-top:14px">Find Water</div>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-top:20px">
+              <div style="font-size:13px;color:#9C9484;letter-spacing:0.01em">Reveals in <span style="color:#7A7363;font-weight:500">0d 0h 02m</span></div>
+              <div style="width:52px;height:52px;border-radius:50%;background:#26241F;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(38,36,31,0.22)">
+                <svg width="20" height="20" viewBox="0 0 20 20"><path d="M10 3.5v13M3.5 10h13" stroke="#F7F3EA" stroke-width="2" stroke-linecap="round"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== LOCKED (pre-reveal) ===== -->
+          <sc-if value="{{ locked }}" hint-placeholder-val="{{ true }}">
+            <div style="margin-top:34px;padding-bottom:28px">
+              <div style="font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:29px;letter-spacing:-0.01em;color:#26241F">The Reveal</div>
+              <div style="margin-top:5px;font-size:14px;color:#9C9484">Everyone's in. <span style="color:#7A7363">4 friends posted this week.</span></div>
+              <div style="height:1px;background:#E4DCC9;margin-top:16px"></div>
+
+              <!-- sealed stack -->
+              <div style="position:relative;height:212px;margin-top:30px;display:flex;align-items:center;justify-content:center">
+                <div style="position:absolute;width:206px;aspect-ratio:1.31;background:#FBF8F1;border:1px solid #EDE6D6;border-radius:13px;transform:rotate(-7deg) translateY(6px);box-shadow:0 10px 24px rgba(38,36,31,0.10)"></div>
+                <div style="position:absolute;width:206px;aspect-ratio:1.31;background:#FCF9F3;border:1px solid #EDE6D6;border-radius:13px;transform:rotate(4deg) translateY(2px);box-shadow:0 10px 24px rgba(38,36,31,0.10)"></div>
+                <div style="position:absolute;width:206px;aspect-ratio:1.31;background:#FFFFFF;border:1px solid #EDE6D6;border-radius:13px;transform:rotate(-1deg);box-shadow:0 14px 30px rgba(38,36,31,0.14);display:flex;align-items:center;justify-content:center">
+                  <div style="position:relative;width:54px;height:54px;border-radius:50%;border:1.5px solid rgba(156,148,132,0.4);display:flex;align-items:center;justify-content:center;transform:rotate(-8deg)">
+                    <div style="font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:22px;color:#9C9484">K</div>
+                  </div>
+                </div>
+              </div>
+
+              <div style="text-align:center;margin-top:22px">
+                <div style="font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#9C9484">Thursday · 8:00 AM</div>
+                <div style="font-size:14px;color:#7A7363;margin-top:8px">Sealed until everyone can see at once.</div>
+              </div>
+
+              <div onClick="{{ startReveal }}" style="display:flex;align-items:center;justify-content:center;gap:9px;background:#26241F;color:#F7F3EA;font-size:16px;font-weight:600;padding:15px;border-radius:13px;margin-top:24px;cursor:pointer;box-shadow:0 4px 14px rgba(38,36,31,0.18)">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M7 11V8a5 5 0 0 1 10 0" stroke="#F7F3EA" stroke-width="1.8" stroke-linecap="round"/><rect x="4.5" y="11" width="15" height="9.5" rx="2.4" stroke="#F7F3EA" stroke-width="1.8"/></svg>
+                Open the reveal
+              </div>
+            </div>
+          </sc-if>
+
+          <!-- ===== REVEALED feed ===== -->
+          <sc-if value="{{ revealed }}" hint-placeholder-val="{{ false }}">
+            <div>
+              <div style="margin-top:34px">
+                <div style="font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:29px;letter-spacing:-0.01em;color:#26241F">The Reveal</div>
+                <div style="margin-top:5px;font-size:14px;color:#9C9484">Everyone's take on <span style="font-family:'Fraunces',Georgia,serif;color:#26241F;font-size:15px">Find Water</span></div>
+                <div style="height:1px;background:#E4DCC9;margin-top:16px"></div>
+              </div>
+
+              <!-- Maya -->
+              <div style="margin-top:24px">
+                <div style="display:flex;align-items:center;gap:11px;margin-bottom:14px">
+                  <div style="width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background-image:linear-gradient(140deg,#CDB994,#9E8462)">
+                    <span style="font-family:'Fraunces',Georgia,serif;font-size:15px;color:#FBF8F1;font-weight:500">M</span>
+                  </div>
+                  <div style="font-size:15px;font-weight:600;color:#26241F">Maya Lin</div>
+                  <div style="font-size:13px;color:#9C9484">· 3 postcards</div>
+                </div>
+                <div ref="{{ mayaScroller }}" onScroll="{{ onMayaScroll }}" class="kairo-scroller" style="display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none">
+                  <div style="flex:none;width:100%;scroll-snap-align:center">
+                    <dc-import name="Postcard" photo-id="proto-maya-1" location="Cedar Creek, WA" caption="Found it at the end of the trail, cold and loud." date="March 12, 2026" photo-placeholder="Drop a photo" hint-size="100%,260px"></dc-import>
+                  </div>
+                  <div style="flex:none;width:100%;scroll-snap-align:center">
+                    <dc-import name="Postcard" photo-id="proto-maya-2" location="Cedar Creek, WA" caption="Cold enough to make us laugh." date="March 12, 2026" photo-placeholder="Drop a photo" hint-size="100%,260px"></dc-import>
+                  </div>
+                  <div style="flex:none;width:100%;scroll-snap-align:center">
+                    <dc-import name="Postcard" photo-id="proto-maya-3" location="The drive home" caption="The light did this on the way back." date="March 12, 2026" photo-placeholder="Drop a photo" hint-size="100%,260px"></dc-import>
+                  </div>
+                </div>
+                <div style="display:flex;gap:6px;justify-content:center;margin-top:13px">
+                  <div style="{{ mayaDot0 }}"></div>
+                  <div style="{{ mayaDot1 }}"></div>
+                  <div style="{{ mayaDot2 }}"></div>
+                </div>
+              </div>
+
+              <!-- Jonah -->
+              <div style="margin-top:28px;padding-bottom:24px">
+                <div style="display:flex;align-items:center;gap:11px;margin-bottom:14px">
+                  <div style="width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background-image:linear-gradient(140deg,#B9A7C0,#8A7392)">
+                    <span style="font-family:'Fraunces',Georgia,serif;font-size:15px;color:#FBF8F1;font-weight:500">J</span>
+                  </div>
+                  <div style="font-size:15px;font-weight:600;color:#26241F">Jonah Reese</div>
+                  <div style="font-size:13px;color:#9C9484">· 1 postcard</div>
+                </div>
+                <dc-import name="Postcard" photo-id="proto-jonah" location="Pike Place" caption="The fish counter has a fountain. It counts." date="March 11, 2026" photo-placeholder="Drop a photo" hint-size="100%,260px"></dc-import>
+              </div>
+            </div>
+          </sc-if>
+
+        </div>
+
+        <!-- TAB BAR (Home active) -->
+        <div style="flex:none;background:#FBF8F1;border-top:1px solid #E4DCC9;display:flex;padding:11px 20px 30px">
+          <div onClick="{{ goHome }}" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 10.2 12 4l8 6.2V20a1 1 0 0 1-1 1h-4v-6h-6v6H5a1 1 0 0 1-1-1z" fill="#26241F"/></svg>
+            <span style="font-size:10px;font-weight:600;color:#26241F">Home</span>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8.5" r="3" stroke="#B5AD9C" stroke-width="1.7"/><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5" stroke="#B5AD9C" stroke-width="1.7" stroke-linecap="round"/><circle cx="16.5" cy="9" r="2.4" stroke="#B5AD9C" stroke-width="1.7"/><path d="M16 14.2c2.6.2 4.5 2.1 4.5 4.8" stroke="#B5AD9C" stroke-width="1.7" stroke-linecap="round"/></svg>
+            <span style="font-size:10px;font-weight:500;color:#B5AD9C">Friends</span>
+          </div>
+          <div onClick="{{ goCreate }}" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="6.5" width="18" height="13" rx="2.6" stroke="#B5AD9C" stroke-width="1.7"/><circle cx="12" cy="13" r="3.2" stroke="#B5AD9C" stroke-width="1.7"/><path d="M8.5 6.5 9.8 4.4h4.4l1.3 2.1" stroke="#B5AD9C" stroke-width="1.7" stroke-linejoin="round"/></svg>
+            <span style="font-size:10px;font-weight:500;color:#B5AD9C">Create</span>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.4" stroke="#B5AD9C" stroke-width="1.7"/><path d="M5.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6" stroke="#B5AD9C" stroke-width="1.7" stroke-linecap="round"/></svg>
+            <span style="font-size:10px;font-weight:500;color:#B5AD9C">Profile</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================================================== CREATE ================================================== -->
+      <div style="{{ createStyle }}">
+        <div style="flex:none;padding:60px 22px 0;text-align:center">
+          <div style="font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#9C9484">Kairo in progress</div>
+          <div style="font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:30px;line-height:1.05;color:#26241F;margin-top:9px">Find Water</div>
+          <div style="font-size:13px;color:#9C9484;margin-top:8px">Reveals in <span style="color:#7A7363;font-weight:500">0d 0h 02m</span></div>
+          <div style="display:flex;align-items:center;gap:10px;margin-top:20px">
+            <div style="flex:1;display:flex;gap:6px">
+              <div style="{{ seg0 }}"></div>
+              <div style="{{ seg1 }}"></div>
+              <div style="{{ seg2 }}"></div>
+            </div>
+            <div style="font-size:12px;font-weight:600;color:#9C9484;letter-spacing:0.02em">{{ countLabel }}</div>
+          </div>
+        </div>
+
+        <!-- empty -->
+        <sc-if value="{{ createEmpty }}" hint-placeholder-val="{{ true }}">
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 30px">
+            <div style="width:178px;aspect-ratio:1.31;border:1.5px dashed #CFC4AE;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:26px">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 6v12M6 12h12" stroke="#C0B59F" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <div style="font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:24px;color:#26241F">Your week starts here</div>
+            <div style="font-size:14px;line-height:1.55;color:#7A7363;margin-top:11px;max-width:262px;text-wrap:pretty">Make a postcard whenever the moment's right. It stays yours until the reveal.</div>
+            <div onClick="{{ openCamera }}" style="display:inline-flex;align-items:center;justify-content:center;background:#26241F;color:#F7F3EA;font-size:15px;font-weight:600;padding:13px 26px;border-radius:13px;margin-top:26px;cursor:pointer">Make your first postcard</div>
+          </div>
+        </sc-if>
+
+        <!-- has cards -->
+        <sc-if value="{{ createSome }}" hint-placeholder-val="{{ false }}">
+          <div class="kairo-scroller" style="flex:1;overflow:auto;padding:24px 20px 20px;display:flex;flex-direction:column;gap:18px">
+            <dc-import name="Postcard" photo-id="proto-mine-1" location="Cedar Creek" caption="Found it at the end of the trail, cold and loud." date="March 12, 2026" photo-placeholder="Drop a photo" hint-size="100%,260px"></dc-import>
+            <sc-if value="{{ has2 }}" hint-placeholder-val="{{ false }}">
+              <dc-import name="Postcard" photo-id="proto-mine-2" location="Green Lake" caption="Still water this time. We just sat." date="March 13, 2026" photo-placeholder="Drop a photo" hint-size="100%,260px"></dc-import>
+            </sc-if>
+            <sc-if value="{{ has3 }}" hint-placeholder-val="{{ false }}">
+              <dc-import name="Postcard" photo-id="proto-mine-3" caption="Rain counts as water, we decided." date="March 14, 2026" photo-placeholder="Drop a photo" hint-size="100%,260px"></dc-import>
+            </sc-if>
+
+            <sc-if value="{{ canMakeMore }}" hint-placeholder-val="{{ true }}">
+              <div onClick="{{ openCamera }}" style="width:100%;aspect-ratio:1.31;border:1.5px dashed #CFC4AE;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;cursor:pointer">
+                <div style="width:44px;height:44px;border-radius:50%;background:#26241F;display:flex;align-items:center;justify-content:center">
+                  <svg width="18" height="18" viewBox="0 0 20 20"><path d="M10 3.5v13M3.5 10h13" stroke="#F7F3EA" stroke-width="2" stroke-linecap="round"/></svg>
+                </div>
+                <div style="font-size:14px;font-weight:600;color:#7A7363">Make a postcard</div>
+                <div style="font-size:12px;color:#B5AD9C">{{ leftLabel }}</div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ createDone }}" hint-placeholder-val="{{ false }}">
+              <div style="background:#FBF8F1;border:1px solid #E4DCC9;border-radius:14px;padding:16px 18px;text-align:center;box-shadow:0 4px 14px rgba(38,36,31,0.06)">
+                <div style="font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:18px;color:#26241F">Kairo complete</div>
+                <div style="font-size:13px;color:#7A7363;margin-top:4px">See everyone's take on Thursday.</div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-if>
+
+        <!-- TAB BAR (Create active) -->
+        <div style="flex:none;background:#FBF8F1;border-top:1px solid #E4DCC9;display:flex;padding:11px 20px 30px">
+          <div onClick="{{ goHome }}" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 10.2 12 4l8 6.2V20a1 1 0 0 1-1 1h-4v-6h-6v6H5a1 1 0 0 1-1-1z" stroke="#B5AD9C" stroke-width="1.7" stroke-linejoin="round"/></svg>
+            <span style="font-size:10px;font-weight:500;color:#B5AD9C">Home</span>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8.5" r="3" stroke="#B5AD9C" stroke-width="1.7"/><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5" stroke="#B5AD9C" stroke-width="1.7" stroke-linecap="round"/><circle cx="16.5" cy="9" r="2.4" stroke="#B5AD9C" stroke-width="1.7"/><path d="M16 14.2c2.6.2 4.5 2.1 4.5 4.8" stroke="#B5AD9C" stroke-width="1.7" stroke-linecap="round"/></svg>
+            <span style="font-size:10px;font-weight:500;color:#B5AD9C">Friends</span>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="6.5" width="18" height="13" rx="2.6" stroke="#26241F" stroke-width="1.7"/><circle cx="12" cy="13" r="3.2" stroke="#26241F" stroke-width="1.7"/><path d="M8.5 6.5 9.8 4.4h4.4l1.3 2.1" stroke="#26241F" stroke-width="1.7" stroke-linejoin="round"/></svg>
+            <span style="font-size:10px;font-weight:600;color:#26241F">Create</span>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.4" stroke="#B5AD9C" stroke-width="1.7"/><path d="M5.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6" stroke="#B5AD9C" stroke-width="1.7" stroke-linecap="round"/></svg>
+            <span style="font-size:10px;font-weight:500;color:#B5AD9C">Profile</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================================================== CAMERA (horizontal-lock) ================================================== -->
+      <div style="{{ cameraStyle }}">
+        <div style="height:100%;background:#161412;display:flex;flex-direction:column">
+          <!-- top bar -->
+          <div style="flex:none;padding:58px 22px 0;display:flex;align-items:center;justify-content:space-between">
+            <div onClick="{{ goCreate }}" style="font-size:15px;color:rgba(247,243,234,0.85);font-weight:500;cursor:pointer">Cancel</div>
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(247,243,234,0.5)">New postcard</div>
+            <div style="width:46px"></div>
+          </div>
+
+          <!-- viewfinder area -->
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 18px">
+            <!-- landscape 4:3 locked frame -->
+            <div style="position:relative;width:100%;aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:repeating-linear-gradient(115deg,#26241F 0 13px,#211F1A 13px 26px)">
+              <!-- frame corners -->
+              <div style="position:absolute;top:12px;left:12px;width:26px;height:26px;border-top:2px solid rgba(247,243,234,0.85);border-left:2px solid rgba(247,243,234,0.85);border-radius:3px 0 0 0"></div>
+              <div style="position:absolute;top:12px;right:12px;width:26px;height:26px;border-top:2px solid rgba(247,243,234,0.85);border-right:2px solid rgba(247,243,234,0.85);border-radius:0 3px 0 0"></div>
+              <div style="position:absolute;bottom:12px;left:12px;width:26px;height:26px;border-bottom:2px solid rgba(247,243,234,0.85);border-left:2px solid rgba(247,243,234,0.85);border-radius:0 0 0 3px"></div>
+              <div style="position:absolute;bottom:12px;right:12px;width:26px;height:26px;border-bottom:2px solid rgba(247,243,234,0.85);border-right:2px solid rgba(247,243,234,0.85);border-radius:0 0 3px 0"></div>
+              <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M3 7.5h3l1.4-2h9.2L18 7.5h3v11.5H3z" stroke="rgba(247,243,234,0.6)" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.6" stroke="rgba(247,243,234,0.6)" stroke-width="1.5"/></svg>
+                <div style="font-family:'Inter',monospace;font-size:11px;letter-spacing:0.1em;color:rgba(247,243,234,0.45)">LANDSCAPE · 4:3</div>
+              </div>
+            </div>
+            <!-- rotate hint -->
+            <div style="display:flex;align-items:center;gap:9px;margin-top:24px;background:rgba(247,243,234,0.08);border:1px solid rgba(247,243,234,0.12);border-radius:11px;padding:11px 16px">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 9a8 8 0 0 1 14-3m0 0V3m0 3h-3" stroke="rgba(247,243,234,0.85)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 15a8 8 0 0 1-14 3m0 0v3m0-3h3" stroke="rgba(247,243,234,0.85)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div style="font-size:13px;color:rgba(247,243,234,0.8);line-height:1.4">Turn your phone sideways<br><span style="color:rgba(247,243,234,0.5)">Kairo postcards are landscape.</span></div>
+            </div>
+          </div>
+
+          <!-- shutter -->
+          <div style="flex:none;padding:18px 0 40px;display:flex;align-items:center;justify-content:center">
+            <div onClick="{{ capture }}" style="width:74px;height:74px;border-radius:50%;border:3px solid rgba(247,243,234,0.9);display:flex;align-items:center;justify-content:center;cursor:pointer">
+              <div style="width:58px;height:58px;border-radius:50%;background:#F7F3EA"></div>
+            </div>
+          </div>
+
+          <!-- capture flash -->
+          <div style="{{ flashStyle }}"></div>
+        </div>
+      </div>
+
+      <!-- ================================================== MAKE DETAILS ================================================== -->
+      <div style="{{ makeStyle }}">
+        <div style="flex:none;padding:56px 20px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ECE5D5">
+          <div onClick="{{ goCreate }}" style="font-size:15px;color:#9C9484;font-weight:500;cursor:pointer">Cancel</div>
+          <div style="font-size:15px;font-weight:600;color:#26241F">New postcard</div>
+          <div onClick="{{ openCamera }}" style="font-size:15px;color:#7A7363;font-weight:500;cursor:pointer">Retake</div>
+        </div>
+
+        <div class="kairo-scroller" style="flex:1;overflow:auto;padding:22px 20px 20px">
+          <div style="width:100%;aspect-ratio:1.31;background:#FFFFFF;border-radius:14px;padding:3.1%;box-shadow:0 6px 20px rgba(38,36,31,0.10)">
+            <div style="position:relative;width:100%;height:100%;border-radius:8px;overflow:hidden;background:#EFE9DC">
+              <image-slot id="proto-make-photo" style="width:100%;height:100%;display:block" shape="rect" placeholder="Captured photo"></image-slot>
+            </div>
+          </div>
+
+          <div style="margin-top:24px">
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#9C9484;margin-bottom:9px">Caption</div>
+            <div style="font-family:'Fraunces',Georgia,serif;font-size:19px;line-height:1.45;color:#26241F">Found it at the end of the trail, cold and loud.<span style="display:inline-block;width:1.5px;height:20px;background:#26241F;margin-left:2px;vertical-align:-3px"></span></div>
+            <div style="height:1px;background:#E4DCC9;margin-top:12px"></div>
+          </div>
+
+          <div style="margin-top:24px">
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#9C9484;margin-bottom:9px">Location</div>
+            <div style="display:flex;align-items:center;gap:9px;padding-bottom:11px;border-bottom:1px solid #E4DCC9">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z" stroke="#9C9484" stroke-width="1.7"/><circle cx="12" cy="10" r="2.4" stroke="#9C9484" stroke-width="1.7"/></svg>
+              <div style="font-size:15px;color:#26241F">Cedar Creek</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="flex:none;padding:14px 20px 34px;background:#FBF8F1;border-top:1px solid #E4DCC9">
+          <div onClick="{{ addCard }}" style="display:flex;align-items:center;justify-content:center;background:#26241F;color:#F7F3EA;font-size:16px;font-weight:600;padding:15px;border-radius:13px;cursor:pointer">Add to this week</div>
+        </div>
+      </div>
+
+      <!-- ================================================== REVEAL CEREMONY ================================================== -->
+      <sc-if value="{{ revealMounted }}" hint-placeholder-val="{{ false }}">
+        <div onClick="{{ skipReveal }}" style="{{ overlayStyle }}">
+          <div style="flex:none;{{ revLabelStyle }}">
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:#A89C85;text-align:center">Thursday · 8:00 AM</div>
+          </div>
+
+          <div style="margin-top:18px;text-align:center;{{ revTitleStyle }}">
+            <div style="font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:34px;line-height:1.08;color:#F7F3EA">The reveal is here</div>
+            <div style="margin-top:14px;font-size:14px;color:#A89C85">Everyone's take on</div>
+            <div style="font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:24px;color:#E8DFCB;margin-top:3px">Find Water</div>
+          </div>
+
+          <!-- settling cards -->
+          <div style="position:relative;height:188px;width:100%;margin-top:36px;display:flex;align-items:center;justify-content:center">
+            <div style="position:absolute;width:150px;{{ revCard0 }}">
+              <div style="background:#FFFFFF;padding:6px;border-radius:9px;box-shadow:0 16px 36px rgba(0,0,0,0.4)">
+                <div style="position:relative;width:100%;aspect-ratio:4/3;border-radius:5px;overflow:hidden;background:#EFE9DC">
+                  <image-slot id="proto-rev-1" style="width:100%;height:100%;display:block" shape="rect" placeholder="photo"></image-slot>
+                  <div style="position:absolute;left:8px;bottom:7px;color:#fff;font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-shadow:0 1px 3px rgba(0,0,0,0.6);pointer-events:none">Cedar Creek</div>
+                </div>
+              </div>
+            </div>
+            <div style="position:absolute;width:150px;{{ revCard1 }}">
+              <div style="background:#FFFFFF;padding:6px;border-radius:9px;box-shadow:0 16px 36px rgba(0,0,0,0.4)">
+                <div style="position:relative;width:100%;aspect-ratio:4/3;border-radius:5px;overflow:hidden;background:#EFE9DC">
+                  <image-slot id="proto-rev-2" style="width:100%;height:100%;display:block" shape="rect" placeholder="photo"></image-slot>
+                  <div style="position:absolute;left:8px;bottom:7px;color:#fff;font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-shadow:0 1px 3px rgba(0,0,0,0.6);pointer-events:none">Pike Place</div>
+                </div>
+              </div>
+            </div>
+            <div style="position:absolute;width:150px;{{ revCard2 }}">
+              <div style="background:#FFFFFF;padding:6px;border-radius:9px;box-shadow:0 16px 36px rgba(0,0,0,0.4)">
+                <div style="position:relative;width:100%;aspect-ratio:4/3;border-radius:5px;overflow:hidden;background:#EFE9DC">
+                  <image-slot id="proto-rev-3" style="width:100%;height:100%;display:block" shape="rect" placeholder="photo"></image-slot>
+                  <div style="position:absolute;left:8px;bottom:7px;color:#fff;font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-shadow:0 1px 3px rgba(0,0,0,0.6);pointer-events:none">Green Lake</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:30px;text-align:center;{{ revCloseStyle }}">
+            <div style="font-size:14px;color:#A89C85">Tap to see them all</div>
+          </div>
+        </div>
+      </sc-if>
+
+    </div>
+  </x-import>
+
+  <div onClick="{{ restart }}" style="display:flex;align-items:center;gap:8px;color:#8C8474;font-size:12px;font-weight:600;letter-spacing:0.04em;cursor:pointer;background:#F1EDE4;border:1px solid #DCD5C6;padding:9px 16px;border-radius:999px">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M4 9a8 8 0 0 1 14-3m0 0V3m0 3h-3M20 15a8 8 0 0 1-14 3m0 0v3m0-3h3" stroke="#8C8474" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Restart prototype
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { screen: 'home', revealed: false, revealPhase: 0, createdCount: 0, flashing: false, mayaIndex: 0 };
+  _timers = [];
+  mayaScroller = React.createRef();
+
+  componentWillUnmount() { this._clear(); }
+  _clear() { this._timers.forEach(clearTimeout); this._timers = []; }
+  _at(ms, fn) { this._timers.push(setTimeout(fn, ms)); }
+
+  startReveal() {
+    this._clear();
+    this.setState({ revealPhase: 1 });
+    this._at(1300, () => this.setState({ revealPhase: 2 }));
+    this._at(2800, () => this.setState({ revealPhase: 3 }));
+    this._at(4700, () => this.setState({ revealPhase: 4 }));
+    this._at(6400, () => this.setState({ revealPhase: 5, revealed: true }));
+    this._at(7350, () => this.setState({ revealPhase: 0 }));
+  }
+  skipReveal() {
+    if (this.state.revealPhase >= 5) return;
+    this._clear();
+    this.setState({ revealPhase: 5, revealed: true });
+    this._at(900, () => this.setState({ revealPhase: 0 }));
+  }
+  capture() {
+    this.setState({ flashing: true });
+    this._at(130, () => this.setState({ flashing: false, screen: 'makeDetails' }));
+  }
+  addCard() {
+    this.setState(s => ({ screen: 'create', createdCount: Math.min(3, s.createdCount + 1) }));
+  }
+  restart() {
+    this._clear();
+    this.setState({ screen: 'home', revealed: false, revealPhase: 0, createdCount: 0, flashing: false });
+  }
+
+  _screenStyle(name) {
+    const active = this.state.screen === name;
+    const base = 'position:absolute;inset:0;display:flex;flex-direction:column;transition:opacity .45s ease, transform .5s cubic-bezier(.2,.72,.16,1);';
+    if (active) return base + 'opacity:1;transform:translateY(0);pointer-events:auto;z-index:3';
+    const hideT = (name === 'camera' || name === 'makeDetails') ? 'translateY(101%)' : 'translateY(0)';
+    return base + 'opacity:' + ((name === 'camera' || name === 'makeDetails') ? 1 : 0) + ';transform:' + hideT + ';pointer-events:none;z-index:' + ((name === 'camera' || name === 'makeDetails') ? 2 : 1);
+  }
+
+  _fade(show, dy, delay) {
+    return 'transition:opacity .85s ease ' + delay + 'ms, transform .85s cubic-bezier(.2,.72,.16,1) ' + delay + 'ms;opacity:' + (show ? 1 : 0) + ';transform:translateY(' + (show ? 0 : dy) + 'px)';
+  }
+  _revCard(show, rot, dx, delay) {
+    return 'transition:opacity 1s ease ' + delay + 'ms, transform 1s cubic-bezier(.2,.72,.16,1) ' + delay + 'ms;opacity:' + (show ? 1 : 0) + ';transform:translateX(' + dx + 'px) translateY(' + (show ? 0 : 30) + 'px) rotate(' + (show ? rot : 0) + 'deg)';
+  }
+  _dot(active) {
+    return 'width:6px;height:6px;border-radius:50%;transition:background .2s;background:' + (active ? '#26241F' : '#D8CFBC');
+  }
+  _seg(on) {
+    return 'flex:1;height:4px;border-radius:2px;transition:background .3s;background:' + (on ? '#26241F' : '#E1D8C6');
+  }
+
+  renderVals() {
+    const s = this.state;
+    const ph = s.revealPhase;
+    const c = s.createdCount;
+    const i = s.mayaIndex;
+    return {
+      homeStyle: this._screenStyle('home'),
+      createStyle: this._screenStyle('create'),
+      cameraStyle: this._screenStyle('camera'),
+      makeStyle: this._screenStyle('makeDetails'),
+
+      locked: !s.revealed,
+      revealed: s.revealed,
+
+      createEmpty: c === 0,
+      createSome: c > 0,
+      has2: c >= 2,
+      has3: c >= 3,
+      canMakeMore: c < 3,
+      createDone: c >= 3,
+      countLabel: c + ' / 3',
+      leftLabel: (3 - c) + ' left this week',
+      seg0: this._seg(c >= 1),
+      seg1: this._seg(c >= 2),
+      seg2: this._seg(c >= 3),
+
+      flashStyle: 'position:absolute;inset:0;background:#fff;pointer-events:none;transition:opacity .12s ease;opacity:' + (s.flashing ? 0.92 : 0) + ';z-index:60',
+
+      revealMounted: ph > 0,
+      overlayStyle: 'position:absolute;inset:0;z-index:40;background:#26241F;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 30px;cursor:pointer;transition:opacity .9s ease;opacity:' + (ph >= 1 && ph < 5 ? 1 : 0) + ';pointer-events:' + (ph >= 1 && ph < 5 ? 'auto' : 'none'),
+      revLabelStyle: this._fade(ph >= 1, 10, 0),
+      revTitleStyle: this._fade(ph >= 2, 14, 0),
+      revCard0: this._revCard(ph >= 3, -8, -96, 0),
+      revCard1: this._revCard(ph >= 3, 2, 0, 130),
+      revCard2: this._revCard(ph >= 3, 9, 96, 260),
+      revCloseStyle: this._fade(ph >= 4, 10, 0),
+
+      mayaScroller: this.mayaScroller,
+      mayaDot0: this._dot(i === 0),
+      mayaDot1: this._dot(i === 1),
+      mayaDot2: this._dot(i === 2),
+      onMayaScroll: () => {
+        const el = this.mayaScroller.current;
+        if (!el) return;
+        const idx = Math.round(el.scrollLeft / el.clientWidth);
+        if (idx !== this.state.mayaIndex) this.setState({ mayaIndex: idx });
+      },
+
+      goHome: () => this.setState({ screen: 'home' }),
+      goCreate: () => this.setState({ screen: 'create' }),
+      openCamera: () => this.setState({ screen: 'camera' }),
+      startReveal: () => this.startReveal(),
+      skipReveal: () => this.skipReveal(),
+      capture: () => this.capture(),
+      addCard: () => this.addCard(),
+      restart: () => this.restart()
+    };
+  }
+}
+</script>
+</body>
+</html>

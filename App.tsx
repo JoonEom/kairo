@@ -6,16 +6,19 @@ import { supabase } from './lib/supabase';
 export default function App() {
   const [dbStatus, setDbStatus] = useState<'checking' | 'connected' | 'error'>('checking');
 
+  const [errorMsg, setErrorMsg] = useState('');
+
   useEffect(() => {
     supabase
       .from('_dummy_ping')
       .select('*')
       .limit(1)
       .then(({ error }) => {
-        // "relation does not exist" (42P01) still means Supabase is reachable
-        if (!error || error.code === '42P01') {
+        // Any PostgREST/Postgres "table not found" error still means Supabase is reachable
+        if (!error || error.code === '42P01' || error.code === 'PGRST205') {
           setDbStatus('connected');
         } else {
+          setErrorMsg(`${error.code}: ${error.message}`);
           setDbStatus('error');
         }
       });

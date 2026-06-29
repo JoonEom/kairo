@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <style>
+    html,body{margin:0;padding:0;background:#F7F3EA}
+    *{box-sizing:border-box}
+  </style>
+</helmet>
+<div style="background:#F7F3EA;min-height:100vh;font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#26241F;padding:72px 40px 120px">
+  <div style="max-width:1040px;margin:0 auto">
+
+    <!-- ===== HEADER ===== -->
+    <header style="margin-bottom:88px">
+      <div style="font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:#9C9484;margin-bottom:24px">Design System</div>
+      <div style="font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:72px;line-height:0.95;letter-spacing:-0.015em;color:#26241F">Kairo</div>
+      <div style="display:flex;align-items:center;gap:16px;margin-top:22px">
+        <div style="width:48px;height:1px;background:#E4DCC9"></div>
+        <div style="font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:19px;color:#7A7363">Make the day count.</div>
+      </div>
+      <p style="max-width:560px;margin-top:28px;font-size:15px;line-height:1.65;color:#7A7363;text-wrap:pretty">The foundations every Kairo screen inherits. Warm, minimal, restrained — the interface stays quiet so the photos are the only real color. No accent hue, on purpose.</p>
+    </header>
+
+    <!-- ===== COLOR ===== -->
+    <section style="margin-bottom:96px">
+      <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:32px">
+        <span style="font-size:11px;font-weight:600;letter-spacing:0.18em;color:#B5AD9C">01</span>
+        <h2 style="margin:0;font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:30px;color:#26241F">Color</h2>
+      </div>
+      <p style="max-width:560px;margin:0 0 36px;font-size:14px;line-height:1.6;color:#7A7363">A single warm neutral family. Bone backgrounds, espresso text, taupe meta. No brand accent — buttons and active states use the espresso primary.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px">
+        <div style="border:1px solid #E4DCC9;border-radius:14px;overflow:hidden;background:#FBF8F1">
+          <div style="height:96px;background:#F7F3EA"></div>
+          <div style="padding:14px 16px"><div style="font-size:13px;font-weight:600;color:#26241F">bg</div><div style="font-size:12px;color:#9C9484;margin-top:3px">#F7F3EA</div><div style="font-size:11px;color:#B5AD9C;margin-top:8px;line-height:1.45">Warm bone · app background</div></div>
+        </div>
+        <div style="border:1px solid #E4DCC9;border-radius:14px;overflow:hidden;background:#FBF8F1">
+          <div style="height:96px;background:#FBF8F1;box-shadow:inset 0 0 0 1px #EDE6D6"></div>
+          <div style="padding:14px 16px"><div style="font-size:13px;font-weight:600;color:#26241F">surface</div><div style="font-size:12px;color:#9C9484;margin-top:3px">#FBF8F1</div><div style="font-size:11px;color:#B5AD9C;margin-top:8px;line-height:1.45">Cards · postcard back · tab bar</div></div>
+        </div>
+        <div style="border:1px solid #E4DCC9;border-radius:14px;overflow:hidden;background:#FBF8F1">
+          <div style="height:96px;background:#FFFFFF;box-shadow:inset 0 0 0 1px #EDE6D6"></div>
+          <div style="padding:14px 16px"><div style="font-size:13px;font-weight:600;color:#26241F">surface.white</div><div style="font-size:12px;color:#9C9484;margin-top:3px">#FFFFFF</div><div style="font-size:11px;color:#B5AD9C;margin-top:8px;line-height:1.45">Postcard front frame</div></div>
+        </div>
+        <div style="border:1px solid #E4DCC9;border-radius:14px;overflow:hidden;background:#FBF8F1">
+          <div style="height:96px;background:#E4DCC9"></div>
+          <div style="padding:14px 16px"><div style="font-size:13px;font-weight:600;color:#26241F">border</div><div style="font-size:12px;color:#9C9484;margin-top:3px">#E4DCC9</div><div style="font-size:11px;color:#B5AD9C;margin-top:8px;line-height:1.45">Hairlines · dividers · borders</div></div>
+        </div>
+        <div style="border:1px solid #E4DCC9;border-radius:14px;overflow:hidden;background:#FBF8F1">
+          <div style="height:96px;background:#26241F"></div>
+          <div style="padding:14px 16px"><div style="font-size:13px;font-weight:600;color:#26241F">text.primary</div><div style="font-size:12px;color:#9C9484;margin-top:3px">#26241F</div><div style="font-size:11px;color:#B5AD9C;margin-top:8px;line-height:1.45">Espresso · text · buttons</div></div>
+        </div>
+        <div style="border:1px solid #E4DCC9;border-radius:14px;overflow:hidden;background:#FBF8F1">
+          <div style="height:96px;background:#7A7363"></div>
+          <div style="padding:14px 16px"><div style="font-size:13px;font-weight:600;color:#26241F">text.secondary</div><div style="font-size:12px;color:#9C9484;margin-top:3px">#7A7363</div><div style="font-size:11px;color:#B5AD9C;margin-top:8px;line-height:1.45">Muted brown · secondary</div></div>
+        </div>
+        <div style="border:1px solid #E4DCC9;border-radius:14px;overflow:hidden;background:#FBF8F1">
+          <div style="height:96px;background:#9C9484"></div>
+          <div style="padding:14px 16px"><div style="font-size:13px;font-weight:600;color:#26241F">text.tertiary</div><div style="font-size:12px;color:#9C9484;margin-top:3px">#9C9484</div><div style="font-size:11px;color:#B5AD9C;margin-top:8px;line-height:1.45">Taupe · meta · labels</div></div>
+        </div>
+        <div style="border:1px solid #E4DCC9;border-radius:14px;overflow:hidden;background:#FBF8F1">
+          <div style="height:96px;background:#B5AD9C"></div>
+          <div style="padding:14px 16px"><div style="font-size:13px;font-weight:600;color:#26241F">text.placeholder</div><div style="font-size:12px;color:#9C9484;margin-top:3px">#B5AD9C</div><div style="font-size:11px;color:#B5AD9C;margin-top:8px;line-height:1.45">Placeholders · counts · hints</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TYPOGRAPHY ===== -->
+    <section style="margin-bottom:96px">
+      <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:32px">
+        <span style="font-size:11px;font-weight:600;letter-spacing:0.18em;color:#B5AD9C">02</span>
+        <h2 style="margin:0;font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:30px;color:#26241F">Typography</h2>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+        <!-- Serif card -->
+        <div style="border:1px solid #E4DCC9;border-radius:14px;background:#FBF8F1;padding:30px 32px">
+          <div style="font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#9C9484;margin-bottom:22px">Fraunces · Serif — carries the soul</div>
+          <div style="font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:54px;line-height:1;color:#26241F">Kairo</div>
+          <div style="font-size:11px;color:#B5AD9C;margin-top:6px;margin-bottom:26px">Wordmark</div>
+          <div style="height:1px;background:#E4DCC9;margin-bottom:24px"></div>
+          <div style="font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:30px;line-height:1.2;color:#26241F">take the long way</div>
+          <div style="font-size:11px;color:#B5AD9C;margin-top:8px;margin-bottom:24px">The Kairo / prompt — serif, upright</div>
+          <div style="font-family:'Fraunces',Georgia,serif;font-weight:400;font-size:19px;line-height:1.5;color:#26241F;max-width:340px">We took the long way home and the light did this.</div>
+          <div style="font-size:11px;color:#B5AD9C;margin-top:8px">Postcard caption</div>
+        </div>
+
+        <!-- Sans card -->
+        <div style="border:1px solid #E4DCC9;border-radius:14px;background:#FBF8F1;padding:30px 32px">
+          <div style="font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#9C9484;margin-bottom:22px">SF Pro / Inter · Sans — out of the way</div>
+          <div style="font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#9C9484">Kairo in progress</div>
+          <div style="font-size:11px;color:#B5AD9C;margin-top:8px;margin-bottom:24px">Label · uppercase · letter-spaced</div>
+          <div style="height:1px;background:#E4DCC9;margin-bottom:24px"></div>
+          <div style="font-size:15px;line-height:1.6;color:#7A7363;max-width:330px">Everyone's postcards stay private until the reveal every Thursday at 8am.</div>
+          <div style="font-size:11px;color:#B5AD9C;margin-top:8px;margin-bottom:24px">Body / UI · secondary</div>
+          <div style="display:inline-flex;align-items:center;justify-content:center;background:#26241F;color:#F7F3EA;font-size:15px;font-weight:600;padding:13px 28px;border-radius:13px">Get started</div>
+          <div style="font-size:11px;color:#B5AD9C;margin-top:10px">Button label</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SPACING ===== -->
+    <section style="margin-bottom:96px">
+      <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:32px">
+        <span style="font-size:11px;font-weight:600;letter-spacing:0.18em;color:#B5AD9C">03</span>
+        <h2 style="margin:0;font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:30px;color:#26241F">Spacing &amp; shape</h2>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+        <!-- spacing -->
+        <div style="border:1px solid #E4DCC9;border-radius:14px;background:#FBF8F1;padding:30px 32px">
+          <div style="font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#9C9484;margin-bottom:26px">Spacing scale · px</div>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <div style="display:flex;align-items:center;gap:16px"><div style="width:4px;height:22px;background:#26241F;border-radius:2px"></div><span style="font-size:13px;color:#7A7363">4</span></div>
+            <div style="display:flex;align-items:center;gap:16px"><div style="width:8px;height:22px;background:#26241F;border-radius:2px"></div><span style="font-size:13px;color:#7A7363">8</span></div>
+            <div style="display:flex;align-items:center;gap:16px"><div style="width:14px;height:22px;background:#26241F;border-radius:2px"></div><span style="font-size:13px;color:#7A7363">14</span></div>
+            <div style="display:flex;align-items:center;gap:16px"><div style="width:16px;height:22px;background:#26241F;border-radius:2px"></div><span style="font-size:13px;color:#7A7363">16</span></div>
+            <div style="display:flex;align-items:center;gap:16px"><div style="width:20px;height:22px;background:#26241F;border-radius:2px"></div><span style="font-size:13px;color:#7A7363">20</span></div>
+            <div style="display:flex;align-items:center;gap:16px"><div style="width:24px;height:22px;background:#26241F;border-radius:2px"></div><span style="font-size:13px;color:#7A7363">24</span></div>
+          </div>
+        </div>
+        <!-- radius + shadow -->
+        <div style="border:1px solid #E4DCC9;border-radius:14px;background:#FBF8F1;padding:30px 32px">
+          <div style="font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#9C9484;margin-bottom:26px">Radius &amp; shadow</div>
+          <div style="display:flex;gap:18px;flex-wrap:wrap;margin-bottom:30px">
+            <div style="text-align:center"><div style="width:64px;height:64px;background:#FFFFFF;border:1px solid #E4DCC9;border-radius:14px"></div><div style="font-size:11px;color:#9C9484;margin-top:8px">14 · cards</div></div>
+            <div style="text-align:center"><div style="width:64px;height:64px;background:#FFFFFF;border:1px solid #E4DCC9;border-radius:12px"></div><div style="font-size:11px;color:#9C9484;margin-top:8px">12 · buttons</div></div>
+            <div style="text-align:center"><div style="width:64px;height:64px;background:#FFFFFF;border:1px solid #E4DCC9;border-radius:10px"></div><div style="font-size:11px;color:#9C9484;margin-top:8px">10 · inputs</div></div>
+            <div style="text-align:center"><div style="width:64px;height:64px;background:#FFFFFF;border:1px solid #E4DCC9;border-radius:8px"></div><div style="font-size:11px;color:#9C9484;margin-top:8px">8 · photos</div></div>
+          </div>
+          <div style="height:1px;background:#E4DCC9;margin-bottom:26px"></div>
+          <div style="display:flex;align-items:center;gap:20px">
+            <div style="width:90px;height:60px;background:#FFFFFF;border-radius:14px;box-shadow:0 6px 20px rgba(38,36,31,0.10)"></div>
+            <div style="font-size:12px;color:#7A7363;line-height:1.5">Soft, low card shadow<br><span style="color:#9C9484">0 6px 20px rgba(38,36,31,0.10)</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== THE POSTCARD ===== -->
+    <section>
+      <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:14px">
+        <span style="font-size:11px;font-weight:600;letter-spacing:0.18em;color:#B5AD9C">04</span>
+        <h2 style="margin:0;font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:30px;color:#26241F">The Postcard</h2>
+      </div>
+      <p style="max-width:600px;margin:0 0 40px;font-size:15px;line-height:1.65;color:#7A7363;text-wrap:pretty">The core artifact. A full-bleed horizontal photo in a white card frame. Tap <span style="display:inline-block;width:18px;height:18px;border:1px solid #E4DCC9;border-radius:50%;background:#FBF8F1;text-align:center;line-height:17px;font-size:11px;color:#7A7363;vertical-align:middle">⤺</span> to turn it over — caption on the left, a divider, and a postmark on the right. Drag any photo onto a card to fill it.</p>
+
+      <div style="display:flex;gap:40px;flex-wrap:wrap;align-items:flex-start">
+        <div style="flex:1 1 380px;max-width:460px">
+          <div style="font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#9C9484;margin-bottom:16px">Front &amp; back · tap to flip</div>
+          <dc-import name="Postcard" photo-id="ds-pc-1" caption="We took the long way home and the light did this." location="Mt. Storm King, WA" date="March 12, 2026" photo-placeholder="Drop a photo · 4:3" hint-size="100%,352px"></dc-import>
+        </div>
+        <div style="flex:1 1 380px;max-width:460px">
+          <div style="font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#9C9484;margin-bottom:16px">No location · longer caption</div>
+          <dc-import name="Postcard" photo-id="ds-pc-2" caption="Found water at the end of the trail. Cold enough to make us laugh." date="March 9, 2026" photo-placeholder="Drop a photo · 4:3" hint-size="100%,352px"></dc-import>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:40px;flex-wrap:wrap;align-items:flex-start;margin-top:48px">
+        <div style="flex:1 1 380px;max-width:460px">
+          <div style="font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#9C9484;margin-bottom:16px">In-feed · photo + location (still flips)</div>
+          <dc-import name="Postcard" photo-id="ds-pc-3" caption="Dove into the water. It was very cold." location="Goat Lake, WA" date="March 5, 2026" photo-placeholder="Drop a photo · 4:3" hint-size="100%,352px"></dc-import>
+        </div>
+
+      </div>
+
+      <!-- Share-out · vertical · export only -->
+      <div style="margin-top:64px">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#9C9484;margin-bottom:10px">Share-out · vertical · export only</div>
+        <p style="max-width:560px;margin:0 0 26px;font-size:14px;line-height:1.6;color:#7A7363;text-wrap:pretty">A composed portrait image for sharing out — nothing like the in-feed card. Both faces of the postcard sit over the Kairo, set quietly in the background, with the wordmark signed in the corner. The only place the prompt and logo ever appear. Drop a photo on the front.</p>
+
+        <div style="position:relative;width:360px;aspect-ratio:4/5;background:#F7F3EA;border:1px solid #E4DCC9;border-radius:18px;overflow:hidden;box-shadow:0 6px 20px rgba(38,36,31,0.10)">
+
+          <!-- the Kairo, in the background -->
+          <div style="position:absolute;top:32px;left:26px;width:204px;font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:33px;line-height:1.08;color:#CFC4AE;letter-spacing:-0.01em">take the long way</div>
+          <!-- wordmark signature -->
+          <div style="position:absolute;top:32px;right:26px;font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:22px;color:#A89C85">Kairo</div>
+
+          <!-- BACK (lower, behind) -->
+          <div style="position:absolute;top:240px;right:22px;width:212px;aspect-ratio:1.31;transform:rotate(4deg);background:#FBF8F1;border:1px solid #EDE6D6;border-radius:11px;box-sizing:border-box;box-shadow:0 12px 30px rgba(38,36,31,0.18);display:flex;padding:14px">
+            <div style="flex:1.5;padding-right:8px"><div style="font-family:'Fraunces',Georgia,serif;font-weight:400;font-size:13px;line-height:1.45;color:#26241F">We took the long way home and the light did this.</div></div>
+            <div style="width:1px;background:#E4DCC9;margin:1px 0"></div>
+            <div style="width:42%;display:flex;flex-direction:column;align-items:flex-end;justify-content:space-between;padding-left:7px">
+              <div style="width:32px;height:40px;background:#FFFFFF;border:1px solid #E4DCC9;border-radius:2px;box-shadow:0 1px 2px rgba(38,36,31,0.08);display:flex;align-items:center;justify-content:center;transform:rotate(3deg)">
+                <div style="width:24px;height:31px;border:1px dashed #D8CFBC;border-radius:2px;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:14px;color:#9C9484">K</div>
+              </div>
+              <div style="text-align:right">
+                <div style="font-size:8px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#9C9484;margin-bottom:3px">Lake 22, WA</div>
+                <div style="font-size:10px;color:#7A7363">March 12, 2026</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FRONT (upper, on top) -->
+          <div style="position:absolute;top:92px;left:24px;width:212px;transform:rotate(-4deg);background:#FFFFFF;padding:7px;border-radius:11px;box-sizing:border-box;box-shadow:0 12px 30px rgba(38,36,31,0.18)">
+            <div style="position:relative;width:100%;aspect-ratio:4/3;border-radius:6px;overflow:hidden;background:#EFE9DC">
+              <image-slot id="ds-share-front" style="width:100%;height:100%;display:block" shape="rect" placeholder="Drop a photo"></image-slot>
+              <div style="position:absolute;left:9px;bottom:8px;color:#FFFFFF;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap;text-shadow:0 1px 4px rgba(0,0,0,0.5);pointer-events:none">Lake 22, WA</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

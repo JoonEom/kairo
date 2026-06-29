@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>html,body{margin:0;padding:0}*{box-sizing:border-box}.kairo-scroller::-webkit-scrollbar{display:none}</style>
+</helmet>
+<div style="width:max-content;min-width:100%;min-height:100vh;box-sizing:border-box;padding:56px;background:#E8E4DC;font-family:'Inter',-apple-system,sans-serif">
+  <div style="display:flex;gap:64px;align-items:flex-start">
+
+    <!-- ================= CREATE · EMPTY 0/3 ================= -->
+    <div style="flex:none">
+      <div style="font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#8C8474;margin-bottom:18px">Create · empty · 0 / 3</div>
+      <x-import component="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+        <div style="height:100%;display:flex;flex-direction:column;background:#F7F3EA">
+
+          <!-- kairo context header -->
+          <div style="flex:none;padding:60px 22px 0;text-align:center">
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#9C9484">Kairo in progress</div>
+            <div style="font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:30px;line-height:1.05;color:#26241F;margin-top:9px">Find Water</div>
+            <div style="font-size:13px;color:#9C9484;margin-top:8px">Reveals in <span style="color:#7A7363;font-weight:500">2d 14h 32m</span></div>
+            <!-- progress -->
+            <div style="display:flex;align-items:center;gap:10px;margin-top:20px">
+              <div style="flex:1;display:flex;gap:6px">
+                <div style="flex:1;height:4px;border-radius:2px;background:#E1D8C6"></div>
+                <div style="flex:1;height:4px;border-radius:2px;background:#E1D8C6"></div>
+                <div style="flex:1;height:4px;border-radius:2px;background:#E1D8C6"></div>
+              </div>
+              <div style="font-size:12px;font-weight:600;color:#9C9484;letter-spacing:0.02em">0 / 3</div>
+            </div>
+          </div>
+
+          <!-- empty body -->
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 30px">
+            <div style="width:178px;aspect-ratio:1.31;border:1.5px dashed #CFC4AE;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:26px">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 6v12M6 12h12" stroke="#C0B59F" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <div style="font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:24px;color:#26241F">Your week starts here</div>
+            <div style="font-size:14px;line-height:1.55;color:#7A7363;margin-top:11px;max-width:262px;text-wrap:pretty">Make a postcard whenever the moment's right. It stays yours until the reveal.</div>
+            <div style="display:inline-flex;align-items:center;justify-content:center;background:#26241F;color:#F7F3EA;font-size:15px;font-weight:600;padding:13px 26px;border-radius:13px;margin-top:26px">Make your first postcard</div>
+          </div>
+
+          <!-- tab bar -->
+          <div style="flex:none;background:#FBF8F1;border-top:1px solid #E4DCC9;display:flex;padding:11px 20px 30px">
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 10.2 12 4l8 6.2V20a1 1 0 0 1-1 1h-4v-6h-6v6H5a1 1 0 0 1-1-1z" stroke="#B5AD9C" stroke-width="1.7" stroke-linejoin="round"/></svg>
+              <span style="font-size:10px;font-weight:500;color:#B5AD9C">Home</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8.5" r="3" stroke="#B5AD9C" stroke-width="1.7"/><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5" stroke="#B5AD9C" stroke-width="1.7" stroke-linecap="round"/><circle cx="16.5" cy="9" r="2.4" stroke="#B5AD9C" stroke-width="1.7"/><path d="M16 14.2c2.6.2 4.5 2.1 4.5 4.8" stroke="#B5AD9C" stroke-width="1.7" stroke-linecap="round"/></svg>
+              <span style="font-size:10px;font-weight:500;color:#B5AD9C">Friends</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="6.5" width="18" height="13" rx="2.6" stroke="#26241F" stroke-width="1.7"/><circle cx="12" cy="13" r="3.2" stroke="#26241F" stroke-width="1.7"/><path d="M8.5 6.5 9.8 4.4h4.4l1.3 2.1" stroke="#26241F" stroke-width="1.7" stroke-linejoin="round"/></svg>
+              <span style="font-size:10px;font-weight:600;color:#26241F">Create</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.4" stroke="#B5AD9C" stroke-width="1.7"/><path d="M5.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6" stroke="#B5AD9C" stroke-width="1.7" stroke-linecap="round"/></svg>
+              <span style="font-size:10px;font-weight:500;color:#B5AD9C">Profile</span>
+            </div>
+          </div>
+
+        </div>
+      </x-import>
+    </div>
+
+    <!-- ================= CREATE · IN PROGRESS 1/3 ================= -->
+    <div style="flex:none">
+      <div style="font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#8C8474;margin-bottom:18px">Create · in progress · 1 / 3</div>
+      <x-import component="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+        <div style="height:100%;display:flex;flex-direction:column;background:#F7F3EA">
+
+          <div style="flex:none;padding:60px 22px 0;text-align:center">
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#9C9484">Kairo in progress</div>
+            <div style="font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:30px;line-height:1.05;color:#26241F;margin-top:9px">Find Water</div>
+            <div style="font-size:13px;color:#9C9484;margin-top:8px">Reveals in <span style="color:#7A7363;font-weight:500">2d 14h 32m</span></div>
+            <div style="display:flex;align-items:center;gap:10px;margin-top:20px">
+              <div style="flex:1;display:flex;gap:6px">
+                <div style="flex:1;height:4px;border-radius:2px;background:#26241F"></div>
+                <div style="flex:1;height:4px;border-radius:2px;background:#E1D8C6"></div>
+                <div style="flex:1;height:4px;border-radius:2px;background:#E1D8C6"></div>
+              </div>
+              <div style="font-size:12px;font-weight:600;color:#7A7363;letter-spacing:0.02em">1 / 3</div>
+            </div>
+          </div>
+
+          <div style="flex:1;overflow:auto;padding:24px 20px 20px">
+            <dc-import name="Postcard" photo-id="create-pc-1" location="Cedar Creek" caption="Found it at the end of the trail, cold and loud." date="March 12, 2026" photo-placeholder="Drop a photo" hint-size="100%,260px"></dc-import>
+
+            <!-- make another -->
+            <div style="margin-top:22px;width:100%;aspect-ratio:1.31;border:1.5px dashed #CFC4AE;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px">
+              <div style="width:44px;height:44px;border-radius:50%;background:#26241F;display:flex;align-items:center;justify-content:center">
+                <svg width="18" height="18" viewBox="0 0 20 20"><path d="M10 3.5v13M3.5 10h13" stroke="#F7F3EA" stroke-width="2" stroke-linecap="round"/></svg>
+              </div>
+              <div style="font-size:14px;font-weight:600;color:#7A7363">Make a postcard</div>
+              <div style="font-size:12px;color:#B5AD9C">2 left this week</div>
+            </div>
+          </div>
+
+          <div style="flex:none;background:#FBF8F1;border-top:1px solid #E4DCC9;display:flex;padding:11px 20px 30px">
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 10.2 12 4l8 6.2V20a1 1 0 0 1-1 1h-4v-6h-6v6H5a1 1 0 0 1-1-1z" stroke="#B5AD9C" stroke-width="1.7" stroke-linejoin="round"/></svg>
+              <span style="font-size:10px;font-weight:500;color:#B5AD9C">Home</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8.5" r="3" stroke="#B5AD9C" stroke-width="1.7"/><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5" stroke="#B5AD9C" stroke-width="1.7" stroke-linecap="round"/><circle cx="16.5" cy="9" r="2.4" stroke="#B5AD9C" stroke-width="1.7"/><path d="M16 14.2c2.6.2 4.5 2.1 4.5 4.8" stroke="#B5AD9C" stroke-width="1.7" stroke-linecap="round"/></svg>
+              <span style="font-size:10px;font-weight:500;color:#B5AD9C">Friends</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="6.5" width="18" height="13" rx="2.6" stroke="#26241F" stroke-width="1.7"/><circle cx="12" cy="13" r="3.2" stroke="#26241F" stroke-width="1.7"/><path d="M8.5 6.5 9.8 4.4h4.4l1.3 2.1" stroke="#26241F" stroke-width="1.7" stroke-linejoin="round"/></svg>
+              <span style="font-size:10px;font-weight:600;color:#26241F">Create</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.4" stroke="#B5AD9C" stroke-width="1.7"/><path d="M5.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6" stroke="#B5AD9C" stroke-width="1.7" stroke-linecap="round"/></svg>
+              <span style="font-size:10px;font-weight:500;color:#B5AD9C">Profile</span>
+            </div>
+          </div>
+
+        </div>
+      </x-import>
+    </div>
+
+    <!-- ================= CREATE · COMPLETE 3/3 ================= -->
+    <div style="flex:none">
+      <div style="font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#8C8474;margin-bottom:18px">Create · complete · 3 / 3</div>
+      <x-import component="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+        <div style="height:100%;display:flex;flex-direction:column;background:#F7F3EA">
+
+          <div style="flex:none;padding:60px 22px 0;text-align:center">
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#9C9484">Kairo in progress</div>
+            <div style="font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:30px;line-height:1.05;color:#26241F;margin-top:9px">Find Water</div>
+            <div style="display:flex;align-items:center;gap:10px;margin-top:20px">
+              <div style="flex:1;display:flex;gap:6px">
+                <div style="flex:1;height:4px;border-radius:2px;background:#26241F"></div>
+                <div style="flex:1;height:4px;border-radius:2px;background:#26241F"></div>
+                <div style="flex:1;height:4px;border-radius:2px;background:#26241F"></div>
+              </div>
+              <div style="font-size:12px;font-weight:600;color:#26241F;letter-spacing:0.02em">3 / 3</div>
+            </div>
+          </div>
+
+          <div style="flex:1;overflow:auto;padding:22px 20px 20px;display:flex;flex-direction:column;gap:18px">
+            <dc-import name="Postcard" photo-id="create-c-1" location="Cedar Creek" caption="Found it at the end of the trail, cold and loud." date="March 12, 2026" photo-placeholder="Drop a photo" hint-size="100%,260px"></dc-import>
+            <dc-import name="Postcard" photo-id="create-c-2" location="Green Lake" caption="Still water this time. We just sat." date="March 13, 2026" photo-placeholder="Drop a photo" hint-size="100%,260px"></dc-import>
+            <dc-import name="Postcard" photo-id="create-c-3" caption="Rain counts as water, we decided." date="March 14, 2026" photo-placeholder="Drop a photo" hint-size="100%,260px"></dc-import>
+          </div>
+
+          <!-- celebratory banner replaces + -->
+          <div style="flex:none;margin:0 20px 14px;background:#FBF8F1;border:1px solid #E4DCC9;border-radius:14px;padding:16px 18px;text-align:center;box-shadow:0 4px 14px rgba(38,36,31,0.06)">
+            <div style="font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:18px;color:#26241F">Kairo complete</div>
+            <div style="font-size:13px;color:#7A7363;margin-top:4px">See everyone's take on Thursday.</div>
+          </div>
+
+          <div style="flex:none;background:#FBF8F1;border-top:1px solid #E4DCC9;display:flex;padding:11px 20px 30px">
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 10.2 12 4l8 6.2V20a1 1 0 0 1-1 1h-4v-6h-6v6H5a1 1 0 0 1-1-1z" stroke="#B5AD9C" stroke-width="1.7" stroke-linejoin="round"/></svg>
+              <span style="font-size:10px;font-weight:500;color:#B5AD9C">Home</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8.5" r="3" stroke="#B5AD9C" stroke-width="1.7"/><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5" stroke="#B5AD9C" stroke-width="1.7" stroke-linecap="round"/><circle cx="16.5" cy="9" r="2.4" stroke="#B5AD9C" stroke-width="1.7"/><path d="M16 14.2c2.6.2 4.5 2.1 4.5 4.8" stroke="#B5AD9C" stroke-width="1.7" stroke-linecap="round"/></svg>
+              <span style="font-size:10px;font-weight:500;color:#B5AD9C">Friends</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="6.5" width="18" height="13" rx="2.6" stroke="#26241F" stroke-width="1.7"/><circle cx="12" cy="13" r="3.2" stroke="#26241F" stroke-width="1.7"/><path d="M8.5 6.5 9.8 4.4h4.4l1.3 2.1" stroke="#26241F" stroke-width="1.7" stroke-linejoin="round"/></svg>
+              <span style="font-size:10px;font-weight:600;color:#26241F">Create</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.4" stroke="#B5AD9C" stroke-width="1.7"/><path d="M5.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6" stroke="#B5AD9C" stroke-width="1.7" stroke-linecap="round"/></svg>
+              <span style="font-size:10px;font-weight:500;color:#B5AD9C">Profile</span>
+            </div>
+          </div>
+
+        </div>
+      </x-import>
+    </div>
+
+    <!-- ================= MAKE-A-POSTCARD · DETAILS ================= -->
+    <div style="flex:none">
+      <div style="font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#8C8474;margin-bottom:18px">Make a postcard · details</div>
+      <x-import component="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+        <div style="height:100%;display:flex;flex-direction:column;background:#F7F3EA">
+
+          <!-- top bar -->
+          <div style="flex:none;padding:56px 20px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ECE5D5">
+            <div style="font-size:15px;color:#9C9484;font-weight:500">Cancel</div>
+            <div style="font-size:15px;font-weight:600;color:#26241F">New postcard</div>
+            <div style="font-size:15px;color:#7A7363;font-weight:500">Retake</div>
+          </div>
+
+          <div style="flex:1;overflow:auto;padding:22px 20px 20px">
+            <!-- captured photo in postcard frame -->
+            <div style="width:100%;aspect-ratio:1.31;background:#FFFFFF;border-radius:14px;padding:3.1%;box-shadow:0 6px 20px rgba(38,36,31,0.10)">
+              <div style="position:relative;width:100%;height:100%;border-radius:8px;overflow:hidden;background:#EFE9DC">
+                <image-slot id="make-photo" style="width:100%;height:100%;display:block" shape="rect" placeholder="Captured photo"></image-slot>
+              </div>
+            </div>
+
+            <!-- caption field -->
+            <div style="margin-top:24px">
+              <div style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#9C9484;margin-bottom:9px">Caption</div>
+              <div style="font-family:'Fraunces',Georgia,serif;font-size:19px;line-height:1.45;color:#26241F">Found it at the end of the trail, cold and loud.<span style="display:inline-block;width:1.5px;height:20px;background:#26241F;margin-left:2px;vertical-align:-3px"></span></div>
+              <div style="height:1px;background:#E4DCC9;margin-top:12px"></div>
+            </div>
+
+            <!-- location field with autocomplete -->
+            <div style="margin-top:24px;position:relative">
+              <div style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#9C9484;margin-bottom:9px">Location</div>
+              <div style="display:flex;align-items:center;gap:9px;padding-bottom:11px;border-bottom:1px solid #E4DCC9">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z" stroke="#9C9484" stroke-width="1.7"/><circle cx="12" cy="10" r="2.4" stroke="#9C9484" stroke-width="1.7"/></svg>
+                <div style="font-size:15px;color:#26241F">Cedar Cr<span style="display:inline-block;width:1.5px;height:16px;background:#26241F;margin-left:1px;vertical-align:-2px"></span></div>
+              </div>
+              <!-- autocomplete dropdown -->
+              <div style="margin-top:8px;background:#FBF8F1;border:1px solid #E4DCC9;border-radius:12px;overflow:hidden;box-shadow:0 6px 18px rgba(38,36,31,0.08)">
+                <div style="display:flex;align-items:center;gap:10px;padding:12px 15px;border-bottom:1px solid #ECE5D5">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z" stroke="#9C9484" stroke-width="1.7"/><circle cx="12" cy="10" r="2.4" stroke="#9C9484" stroke-width="1.7"/></svg>
+                  <div><div style="font-size:14px;color:#26241F;font-weight:500">Cedar Creek</div><div style="font-size:12px;color:#9C9484">Trailhead · North Bend, WA</div></div>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px;padding:12px 15px;border-bottom:1px solid #ECE5D5">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z" stroke="#9C9484" stroke-width="1.7"/><circle cx="12" cy="10" r="2.4" stroke="#9C9484" stroke-width="1.7"/></svg>
+                  <div><div style="font-size:14px;color:#26241F;font-weight:500">Cedar Falls</div><div style="font-size:12px;color:#9C9484">Rattlesnake Ledge, WA</div></div>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px;padding:12px 15px">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z" stroke="#9C9484" stroke-width="1.7"/><circle cx="12" cy="10" r="2.4" stroke="#9C9484" stroke-width="1.7"/></svg>
+                  <div><div style="font-size:14px;color:#26241F;font-weight:500">Cedar River</div><div style="font-size:12px;color:#9C9484">Renton, WA</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- bottom action -->
+          <div style="flex:none;padding:14px 20px 34px;background:#FBF8F1;border-top:1px solid #E4DCC9">
+            <div style="display:flex;align-items:center;justify-content:center;background:#26241F;color:#F7F3EA;font-size:16px;font-weight:600;padding:15px;border-radius:13px">Add to this week</div>
+          </div>
+
+        </div>
+      </x-import>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
