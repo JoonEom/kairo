@@ -2,13 +2,28 @@
 
 ## What this is
 A React Native + Expo iOS app. Private invite-only weekly photo journal with a Thursday "reveal" mechanic.
-Full spec: `files/PRD.md`. Design system + screen specs: `files/Kairo_Design_Brief.md`. Design handoff HTML mockups: `design_handoff_kairo/`.
+Full spec: `docs/PRD.md`. Design system + screen specs: `docs/Kairo_Design_Brief.md`. Design handoff HTML mockups: `design/`.
 
 ## Stack
-- Expo SDK 54 / React Native 0.81.5 / React 19 / TypeScript
+- Expo SDK 54 / React Native 0.81.5 / React 19 / TypeScript 5.9
 - Supabase (auth + database + storage)
-- Supabase client: `lib/supabase.ts`
 - Env vars: `EXPO_PUBLIC_SUPABASE_URL` and `EXPO_PUBLIC_SUPABASE_ANON_KEY` in `.env` (git-ignored, never commit)
+
+## File structure
+```
+app/          ← Expo Router screens (populated Stage 1+)
+components/   ← Reusable UI components
+constants/    ← Design tokens (colors.ts, typography.ts) — values from PRD
+design/       ← Design handoff HTML mockups
+docs/         ← PRD.md + Kairo_Design_Brief.md
+hooks/        ← Custom React hooks
+lib/          ← supabase.ts client
+screens/      ← Full-screen components
+types/        ← TypeScript types (database.ts has all 5 table shapes)
+assets/       ← Images, fonts
+```
+
+Use `@/` path alias for all imports (e.g. `import { colors } from '@/constants/colors'`).
 
 ## Build sequence — current status
 
@@ -27,6 +42,7 @@ Full spec: `files/PRD.md`. Design system + screen specs: `files/Kairo_Design_Bri
 ## Rules
 - **One stage at a time.** Never build ahead. Confirm each stage works on device before starting the next.
 - **Never commit `.env`** — it contains real Supabase keys.
-- Auth is **Sign in with Apple only** for MVP (iOS-first, zero support burden).
-- The reveal gate (friends can't see postcards until `ends_at`) must be enforced at the **database level via RLS**, not just in the app.
+- Auth is **Sign in with Apple only** for MVP (iOS-first).
+- The reveal gate (friends can't see postcards until `ends_at`) must be enforced at **DB level via RLS**, not just in the app.
 - Offline-first capture is a hard requirement — postcards save locally immediately, sync when signal returns.
+- Max **3 postcards per user per week** — enforced by backend, not just UI.

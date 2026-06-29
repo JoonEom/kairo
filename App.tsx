@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { supabase } from './lib/supabase';
+import { supabase } from '@/lib/supabase';
+import { colors } from '@/constants/colors';
+import { fontSize } from '@/constants/typography';
 
 export default function App() {
   const [dbStatus, setDbStatus] = useState<'checking' | 'connected' | 'error'>('checking');
-
-  const [errorMsg, setErrorMsg] = useState('');
 
   useEffect(() => {
     supabase
@@ -14,11 +14,10 @@ export default function App() {
       .select('*')
       .limit(1)
       .then(({ error }) => {
-        // Any PostgREST/Postgres "table not found" error still means Supabase is reachable
+        // Any PostgREST/Postgres "table not found" response means Supabase is reachable
         if (!error || error.code === '42P01' || error.code === 'PGRST205') {
           setDbStatus('connected');
         } else {
-          setErrorMsg(`${error.code}: ${error.message}`);
           setDbStatus('error');
         }
       });
@@ -40,18 +39,18 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F7F3EA',
+    backgroundColor: colors.background,
     alignItems: 'center',
     justifyContent: 'center',
     gap: 12,
   },
   wordmark: {
-    fontSize: 36,
-    color: '#26241F',
+    fontSize: fontSize.wordmark,
+    color: colors.text.primary,
     letterSpacing: 1,
   },
   meta: {
-    fontSize: 13,
-    color: '#9C9484',
+    fontSize: fontSize.sm,
+    color: colors.text.tertiary,
   },
 });
